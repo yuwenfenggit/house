@@ -63,4 +63,16 @@ public class UsersServiceImpl implements UsersService {
             return list.get(0);
         }
     }
+
+    public Users loginUser(String telephone) {
+        UsersExample usersExample = new UsersExample();
+        UsersExample.Criteria criteria = usersExample.createCriteria();
+        criteria.andTelephoneEqualTo(telephone);
+        List<Users> users = usersMapper.selectByExample(usersExample);
+        if (users.size()==0){
+            return null;
+        }else {
+            return users.get(0);
+        }
+    }
 }

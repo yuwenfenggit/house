@@ -15,4 +15,6 @@ public interface UsersService {
     int checkByName(String name);
 
     Users login(String name,String pwd);
+
+    Users loginUser(String telephone);
 }
