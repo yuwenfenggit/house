@@ -10,7 +10,7 @@ import java.util.Map;
 public class SentMsgUtil {
 	
 	//用户名
-	private static String Uid = "小明90";
+	private static String Uid = "yuwenfeng";
 	
 	//接口安全秘钥
 	private static String Key = "d41d8cd98f00b204e980";

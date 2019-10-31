@@ -230,12 +230,13 @@
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <select id="getByUserId" resultType="House">
-    SELECT h.id,title,floorage,contact,path,t.`NAME` AS tname,s.`NAME` AS sname,d.`NAME` AS dname
-    FROM house  h
-    LEFT JOIN TYPE  t ON h.`TYPE_ID` =t.`ID`
-    LEFT JOIN street  s ON h.`STREET_ID` =s.`ID`
-    LEFT JOIN `district` d ON s.`DISTRICT_ID`=d.`ID`
-    WHERE h.`USER_ID`=#{userId}
+     SELECT price,h.id,title,floorage,contact,path,t.`NAME` AS tname,s.`NAME`
+     AS sname,d.`NAME` AS dname,h.ispass
+   FROM house  h
+   LEFT JOIN TYPE  t ON h.`TYPE_ID` =t.`ID`
+   LEFT JOIN street  s ON h.`STREET_ID` =s.`ID`
+   LEFT JOIN `district` d ON s.`DISTRICT_ID`=d.`ID`
+   WHERE h.isdel=0 and h.`USER_ID`=#{userid}
   </select>
     <select id="getById" parameterType="String" resultType="House">
         SELECT house.id,user_id,type_id
