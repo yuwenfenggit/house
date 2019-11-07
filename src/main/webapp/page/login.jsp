@@ -6,20 +6,20 @@
 rel=stylesheet type=text/css href="../css/style.css">
 <META name=GENERATOR content="MSHTML 8.00.7601.17514"></HEAD>
 <script src="../scripts/jquery-1.8.3.js"></script>
-<script>
-    $(function(){
-        $("#but1").click(function(){
-            $.post("sendCode",{"sendPhone":$("#input_tel").val()},function(data){
-                if(data.result>0){
-                    alert("发送成功");
-                }else{
-                    alert("短信发送失败...");
-                }
-            },"json");
-        });
+<%--<script>--%>
+    <%--$(function(){--%>
+        <%--$("#but1").click(function(){--%>
+            <%--$.post("sendCode",{"sendPhone":$("#input_tel").val()},function(data){--%>
+                <%--if(data.result>0){--%>
+                    <%--alert("发送成功");--%>
+                <%--}else{--%>
+                    <%--alert("短信发送失败...");--%>
+                <%--}--%>
+            <%--},"json");--%>
+        <%--});--%>
 
-    });
-</script>
+    <%--});--%>
+<%--</script>--%>
 <BODY>
 <DIV id=header class=wrap>
 <DIV id=logo><IMG src="../images/logo.gif"></DIV></DIV>
@@ -41,13 +41,14 @@ rel=stylesheet type=text/css href="../css/style.css">
     <TD class=field>密　　码：</TD>
     <TD><!-- <input type="password" class="text" name="password" /> --><INPUT 
       id=user_password class=text type=password name=password> </TD></TR>
-  <TR>
-    <TD class=field>手机号：</TD>
-    <TD><INPUT id=input_tel class=text type=text name=name> <input type="button" id="but1" name="ss" value="获取验证码"> </TD></TR>
-  <TR>
-  <TR>
-    <TD class=field>输入验证码：</TD>
-    <TD><INPUT id=code class=text type=text name=code></TD></TR></TBODY></TABLE>
+  <%--<TR>--%>
+    <%--<TD class=field>手机号：</TD>--%>
+    <%--<TD><INPUT id=input_tel class=text type=text name=name> <input type="button" id="but1" name="ss" value="获取验证码"> </TD></TR>--%>
+  <%--<TR>--%>
+  <%--<TR>--%>
+    <%--<TD class=field>输入验证码：</TD>--%>
+    <%--<TD><INPUT id=code class=text type=text name=code></TD></TR>--%>
+  </TBODY></TABLE>
 <DIV class=buttons> <INPUT name="sub" value=登陆 type=submit> <INPUT onclick='document.location="regs.jsp"' value=注册 type=button>
 </DIV></DIV></FORM></DIV></DIV></DIV>
 <DIV id=footer class=wrap>

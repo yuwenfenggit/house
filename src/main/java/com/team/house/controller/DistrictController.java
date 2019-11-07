@@ -53,9 +53,14 @@ public class DistrictController {
 
     @RequestMapping("upDistrit")
     public Map<String,Object> upDistrit(District district){
+        int i = 0;
         Map<String,Object> map = new HashMap<String, Object>();
-        int i = districtService.updateByPrimaryKeySelective(district);
-        map.put("result",i);
+        if(district.getName()!=null&&!district.getName().equals("")){
+            i = districtService.updateByPrimaryKeySelective(district);
+            map.put("result",i);
+        }else {
+            map.put("result",i);
+        }
         return map;
     }
 
